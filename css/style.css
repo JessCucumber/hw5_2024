@@ -1,0 +1,152 @@
+/* get the font in*/ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+  }
+
+/*logo animation */
+  @keyframes logoAnimation {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+  }
+
+  /* where to put logo animation??????????????*/
+  #logo {
+    width: 25px;
+    opacity: 0;
+    animation: logoAnimation 5s forwards;
+    animation-name: logoAnimation;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a:visited{
+    color: blue;
+  }
+
+  .nav_links{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card > header {
+    padding: 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+    background-color: #288080;
+    border: 2px solid #45ADDD;
+  }
+
+  .card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px;
+  }
+
+  .pricing{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery > img {
+    border: 10px solid #50c7c7;
+    margin: 10px;
+    width: 300px;
+  }
+  
+
+
+
+
+
+  /*Teehee, thought I was done, FOOL! I can't read :,) */
+  /*screen size adjustments*/
+  @media screen and (min-width: 900px){
+    header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .nav_links{
+      flex-direction: row;
+    }
+    body>header{
+      position: sticky;
+      top: 0px;
+    }
+    .card{
+      flex-basis: 275px;
+    }
+    
+    
+  }
+
+    /* NO MOTIONNNN */
+    @media (prefers-reduced-motion: reduce){
+      .gallery{
+        display: none
+      }
+      #gallery {
+        display: none;
+      }
+      .gallery img {
+        border: 10px solid #50c7c7;
+      }
+    }
+
+  /*AHHHHHH HOW DO I DO THE PRINT AHHHHHHHH*/
+  @media print{
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: none;
+    }
+
+    nav{
+      width: 100%;
+    }
+    .nav_links{
+      flex-direction: nowrap;
+      align-items: flex-end;
+
+    }
+    .pricing{
+      flex-wrap: nowrap;
+      align-items: flex-end;
+    }
+    .card{
+      border: 2px solid #45ADDD;
+      flex-basis: 325px;
+    }
+
+    .gallery{
+      display: none;
+    }
+
+    #gallery{
+      display: none;
+    }
+    .card li:nth-child(2)::after{
+      content: "\1F44D";
+    }
+  }
